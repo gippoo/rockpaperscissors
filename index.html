@@ -1,1 +1,72 @@
-<h1>Rock Paper Scissors</h1>
+<!DOCTYPE html>
+<html>
+<body>
+<h2>Number Guessing Game! xD</h2>
+<p>I am thinking of a number between 1 and 10 (inclusive). Try and guess it LOL.</p>
+<p>O and u only get 3 tries. GL</p>
+
+
+<form id = "guessnum">
+Guess a number: <input type = "text" id = "guessn" placeholder="Type guess here"/>
+<br>
+<button type="button" id="b1" onclick='guessing();'>Guess!</button>
+</form>
+
+<p id="outcome"></p>
+<p id="lives">Lives: 3</p>
+
+<br><br><button type="button" onclick='reset();'>Play Again</button>
+
+
+<script>
+var lives = 3
+var secret = Math.floor(Math.random() * 10 + 1);
+function guessing() {
+	if(lives > 0) {
+		var guess = document.getElementById('guessn').value;
+		if (parseInt(guess) > secret) {
+    		lives -= 1
+            if(lives == 0) {
+            	document.getElementById("outcome").innerHTML = "U ded";
+                document.getElementById("lives").innerHTML = "Lives: 0";
+                document.getElementById("b1").disabled = true;
+                document.getElementById("b1").innerHTML = "U Lost"
+            } else {
+    			document.getElementById("outcome").innerHTML = "U suk. It's lower";
+                document.getElementById("lives").innerHTML = "Lives: "+lives;
+            }
+    	} else if(parseInt(guess) < secret) {
+    		lives -= 1
+            if(lives == 0) {
+            	document.getElementById("outcome").innerHTML = "U ded";
+                document.getElementById("lives").innerHTML = "Lives: 0";
+                document.getElementById("b1").disabled = true;
+                document.getElementById("b1").innerHTML = "U Lost"
+            } else {
+    			document.getElementById("outcome").innerHTML = "U suk. It's higher";
+                document.getElementById("lives").innerHTML = "Lives: "+lives;
+            }
+        
+        } else {
+    		document.getElementById("outcome").innerHTML = "Wew (◠‿◠✿)";
+            document.getElementById("b1").disabled = true;
+            document.getElementById("b1").innerHTML = "U won";
+    	}
+	} else {
+    	document.getElementById("outcome").innerHTML = "U ded";
+    }
+}
+function reset() {
+	lives = 3
+	secret = Math.floor(Math.random() * 10 + 1);
+    document.getElementById('guessn').value = '';
+    document.getElementById("outcome").innerHTML = "";
+    document.getElementById("lives").innerHTML = "Lives: 3";
+    document.getElementById("b1").disabled = false;
+    document.getElementById("b1").innerHTML = "Guess!";
+}
+</script>
+      
+    
+  </body>
+</html>
