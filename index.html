@@ -10,6 +10,7 @@
       
 <p id="you">Your choice:</p>
 <p id="comp">Computer's choice:</p>
+<p id="result">Result:</p>
 
 <script>
 var dict = {}
@@ -22,6 +23,15 @@ function rock() {
 	var compchoice = String(Math.floor(Math.random() * 3)+1) ;
 	document.getElementById("you").innerHTML="Your choice: Rock";
     document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
+    if (compchoice == 1) {
+    document.getElementById("result").innerHTML="Result: Draw";
+    }
+    else if (compchoice == 2) {
+    document.getElementById("result").innerHTML="Result: U Lose :(";
+    }
+    else {
+    document.getElementById("result").innerHTML="Result: U Win :)";
+    }
 }
     
     
@@ -29,6 +39,15 @@ function paper() {
 	var compchoice = String(Math.floor(Math.random() * 3)+1) ;
 	document.getElementById("you").innerHTML="Your choice: Paper";
     document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
+    if (compchoice == 1) {
+    document.getElementById("result").innerHTML="Result: U Win :)";
+    }
+    else if (compchoice == 2) {
+    document.getElementById("result").innerHTML="Result: Draw";
+    }
+    else {
+    document.getElementById("result").innerHTML="Result: U Lose :(";
+    }
 }
     
     
@@ -37,6 +56,15 @@ function scissors() {
 	var compchoice = String(Math.floor(Math.random() * 3)+1) ;
 	document.getElementById("you").innerHTML="Your choice: Scissors";
     document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
+    if (compchoice == 1) {
+    document.getElementById("result").innerHTML="Result: U Win :)";
+    }
+    else if (compchoice == 2) {
+    document.getElementById("result").innerHTML="Result: U Lose :(";
+    }
+    else {
+    document.getElementById("result").innerHTML="Result: Draw";
+    }
 }
 </script>
 
