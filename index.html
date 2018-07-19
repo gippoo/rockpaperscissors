@@ -2,6 +2,43 @@
 <html>
 <body>
 <h1>Rock Paper Scissors</h1>
+<p>Pick a choice</p>
+
+<button type="button" id="r" onclick="rock()">Rock</button>
+<button type="button" id="p" onclick="paper()">Paper</button>
+<button type="button" id="s" onclick="scissors()">Scissors</button>
+      
+<p id="you">Your choice:</p>
+<p id="comp">Computer's choice:</p>
+
+<script>
+var dict = {}
+dict[1] = "Rock";
+dict[2] = "Paper";
+dict[3] = "Scissors";
+;
+
+function rock() {
+	var compchoice = String(Math.floor(Math.random() * 3)+1) ;
+	document.getElementById("you").innerHTML="Your choice: Rock";
+    document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
+}
+    
+    
+function paper() {
+	var compchoice = Math.floor(Math.random() * 2 + 1) ;
+	document.getElementById("you").innerHTML="Your choice: Paper";
+    document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
+}
+    
+    
+    
+function scissors() {
+	var compchoice = Math.floor(Math.random() * 2 + 1) ;
+	document.getElementById("you").innerHTML="Your choice: Scissors";
+    document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
+}
+</script>
 
   </body>
 </html>
