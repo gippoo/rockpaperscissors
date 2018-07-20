@@ -2,7 +2,7 @@
 <html>
 <body>
 <h1>Rock Paper Scissors</h1>
-<p>Pick a choice</p>
+<p>Pick a choice:</p>
 
 <button type="button" id="r" onclick="rock()">Rock</button>
 <button type="button" id="p" onclick="paper()">Paper</button>
@@ -11,8 +11,14 @@
 <p id="you">Your choice:</p>
 <p id="comp">Computer's choice:</p>
 <p id="result">Result:</p>
+<br>
+<br>
+<h3>Stats</h5>
+<p id="stats">Wins: 0 Draws: 0 Losses: 0</p>
 
 <script>
+var wins = 0, draws = 0, losses = 0;
+
 var dict = {}
 dict[1] = "Rock";
 dict[2] = "Paper";
@@ -24,14 +30,18 @@ function rock() {
 	document.getElementById("you").innerHTML="Your choice: Rock";
     document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
     if (compchoice == 1) {
-    document.getElementById("result").innerHTML="Result: Draw";
+    	document.getElementById("result").innerHTML="Result: Draw";
+        draws += 1
     }
     else if (compchoice == 2) {
-    document.getElementById("result").innerHTML="Result: U Lose :(";
+    	document.getElementById("result").innerHTML="Result: U Lose :(";
+        losses += 1
     }
     else {
-    document.getElementById("result").innerHTML="Result: U Win (◠‿◠✿)";
+    	document.getElementById("result").innerHTML="Result: U Win (◠‿◠✿)";
+        wins += 1
     }
+    document.getElementById("stats").innerHTML="Wins: "+wins+ " ("+Math.round(wins/(wins+draws+losses)*100)/100*100+"%) "+" Draws: "+draws+ " ("+Math.round(draws/(wins+draws+losses)*100)/100*100+"%) "+" Losses: " +losses+ " ("+Math.round(losses/(wins+draws+losses)*100)/100*100+"%) ";
 }
     
     
@@ -40,14 +50,18 @@ function paper() {
 	document.getElementById("you").innerHTML="Your choice: Paper";
     document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
     if (compchoice == 1) {
-    document.getElementById("result").innerHTML="Result: U Win (◠‿◠✿)";
+    	document.getElementById("result").innerHTML="Result: U Win (◠‿◠✿)";
+        wins += 1
     }
     else if (compchoice == 2) {
-    document.getElementById("result").innerHTML="Result: Draw";
+    	document.getElementById("result").innerHTML="Result: Draw";
+        draws += 1
     }
     else {
-    document.getElementById("result").innerHTML="Result: U Lose :(";
+    	document.getElementById("result").innerHTML="Result: U Lose :(";
+        losses += 1
     }
+    document.getElementById("stats").innerHTML="Wins: "+wins+ " ("+Math.round(wins/(wins+draws+losses)*100)/100*100+"%) "+" Draws: "+draws+ " ("+Math.round(draws/(wins+draws+losses)*100)/100*100+"%) "+" Losses: " +losses+ " ("+Math.round(losses/(wins+draws+losses)*100)/100*100+"%) ";
 }
     
     
@@ -57,14 +71,18 @@ function scissors() {
 	document.getElementById("you").innerHTML="Your choice: Scissors";
     document.getElementById("comp").innerHTML="Computer's choice: "+ dict[compchoice];
     if (compchoice == 1) {
-    document.getElementById("result").innerHTML="Result: U Lose :(";
+    	document.getElementById("result").innerHTML="Result: U Lose :(";
+        losses += 1
     }
     else if (compchoice == 2) {
-    document.getElementById("result").innerHTML="Result: U Win (◠‿◠✿)";
+    	document.getElementById("result").innerHTML="Result: U Win (◠‿◠✿)";
+        wins += 1
     }
     else {
-    document.getElementById("result").innerHTML="Result: Draw";
+    	document.getElementById("result").innerHTML="Result: Draw";
+        draws += 1
     }
+    document.getElementById("stats").innerHTML="Wins: "+wins+ " ("+Math.round(wins/(wins+draws+losses)*100)/100*100+"%) "+" Draws: "+draws+ " ("+Math.round(draws/(wins+draws+losses)*100)/100*100+"%) "+" Losses: " +losses+ " ("+Math.round(losses/(wins+draws+losses)*100)/100*100+"%) ";
 }
 </script>
 
