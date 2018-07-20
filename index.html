@@ -41,7 +41,10 @@ function rock() {
     	document.getElementById("result").innerHTML="Result: U Win (◠‿◠✿)";
         wins += 1
     }
-    document.getElementById("stats").innerHTML="Wins: "+wins+ " ("+Math.round(wins/(wins+draws+losses)*100)/100*100+"%) "+" Draws: "+draws+ " ("+Math.round(draws/(wins+draws+losses)*100)/100*100+"%) "+" Losses: " +losses+ " ("+Math.round(losses/(wins+draws+losses)*100)/100*100+"%) ";
+    document.getElementById("stats").innerHTML="Wins: "+wins+ "\
+     ("+(wins/(wins+draws+losses)*100).toFixed(1)+"%) "+" Draws: "+draws+ "\
+     ("+(draws/(wins+draws+losses)*100).toFixed(1)+"%) "+" Losses: " +losses+ "\
+     ("+(losses/(wins+draws+losses)*100).toFixed(1)+"%) ";
 }
     
     
@@ -61,7 +64,10 @@ function paper() {
     	document.getElementById("result").innerHTML="Result: U Lose :(";
         losses += 1
     }
-    document.getElementById("stats").innerHTML="Wins: "+wins+ " ("+Math.round(wins/(wins+draws+losses)*100)/100*100+"%) "+" Draws: "+draws+ " ("+Math.round(draws/(wins+draws+losses)*100)/100*100+"%) "+" Losses: " +losses+ " ("+Math.round(losses/(wins+draws+losses)*100)/100*100+"%) ";
+    document.getElementById("stats").innerHTML="Wins: "+wins+ "\
+     ("+(wins/(wins+draws+losses)*100).toFixed(1)+"%) "+" Draws: "+draws+ "\
+     ("+(draws/(wins+draws+losses)*100).toFixed(1)+"%) "+" Losses: " +losses+ "\
+     ("+(losses/(wins+draws+losses)*100).toFixed(1)+"%) ";
 }
     
     
@@ -82,9 +88,13 @@ function scissors() {
     	document.getElementById("result").innerHTML="Result: Draw";
         draws += 1
     }
-    document.getElementById("stats").innerHTML="Wins: "+wins+ " ("+Math.round(wins/(wins+draws+losses)*100)/100*100+"%) "+" Draws: "+draws+ " ("+Math.round(draws/(wins+draws+losses)*100)/100*100+"%) "+" Losses: " +losses+ " ("+Math.round(losses/(wins+draws+losses)*100)/100*100+"%) ";
+    document.getElementById("stats").innerHTML="Wins: "+wins+ "\
+     ("+(wins/(wins+draws+losses)*100).toFixed(1)+"%) "+" Draws: "+draws+ "\
+     ("+(draws/(wins+draws+losses)*100).toFixed(1)+"%) "+" Losses: " +losses+ "\
+     ("+(losses/(wins+draws+losses)*100).toFixed(1)+"%) ";
 }
 </script>
 
   </body>
 </html>
+
